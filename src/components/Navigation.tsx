@@ -52,7 +52,7 @@ export default function Navigation() {
     <header
       className={`fixed top-0 left-0 w-full z-100 transition-all duration-300 ${
         scrollY > 20
-          ? 'bg-white/80 backdrop-blur-md border-b border-slate-200/50 py-3.5 shadow-xs'
+          ? 'bg-slate-900/80 backdrop-blur-md border-b border-slate-700/50 py-3.5 shadow-xs'
           : 'bg-transparent py-5'
       }`}
     >
@@ -62,21 +62,21 @@ export default function Navigation() {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center gap-2.5 group cursor-pointer text-left"
         >
-          <div className="w-9 h-9 bg-slate-900 rounded-lg flex items-center justify-center transition group-hover:bg-indigo-600">
+          <div className="w-9 h-9 bg-indigo-600 rounded-lg flex items-center justify-center transition group-hover:bg-indigo-500">
             <span className="text-white text-xs font-sans font-bold tracking-tight">SC</span>
           </div>
           <div>
-            <h4 className="font-display font-bold text-sm text-slate-900 tracking-tight leading-none">
+            <h4 className="font-display font-bold text-sm text-slate-100 tracking-tight leading-none">
               Steph Castro
             </h4>
-            <span className="text-[10px] font-mono text-slate-500 tracking-wider">
+            <span className="text-[10px] font-mono text-slate-400 tracking-wider">
               BSIT & UI/UX Designer
             </span>
           </div>
         </button>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1.5 bg-slate-100/60 border border-slate-200/30 p-1 rounded-full">
+        <nav className="hidden md:flex items-center gap-1.5 bg-slate-800/60 border border-slate-700/30 p-1 rounded-full">
           {menuItems.map((item) => {
             const IconComponent = item.icon;
             const isActive = activeSection === item.id;
@@ -86,19 +86,19 @@ export default function Navigation() {
                 onClick={() => handleNavClick(item.id)}
                 className={`relative px-4 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-all duration-200 flex items-center gap-1.5 ${
                   isActive
-                    ? 'text-slate-900 font-semibold'
-                    : 'text-slate-500 hover:text-slate-950 hover:bg-slate-200/40'
+                    ? 'text-slate-100 font-semibold'
+                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/40'
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="activeNavBackground"
-                    className="absolute inset-0 bg-white border border-slate-200/60 shadow-xs rounded-full"
+                    className="absolute inset-0 bg-slate-700 border border-slate-600/60 shadow-xs rounded-full"
                     transition={{ type: 'spring', stiffness: 355, damping: 30 }}
                   />
                 )}
                 <span className="relative z-10 flex items-center gap-1">
-                  <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-indigo-600' : 'text-slate-400'}`} />
+                  <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-indigo-400' : 'text-slate-500'}`} />
                   {item.label}
                 </span>
               </button>
@@ -117,7 +117,7 @@ export default function Navigation() {
 
           <button
             onClick={() => handleNavClick('contact')}
-            className="flex items-center gap-1 text-xs font-mono font-medium text-white bg-slate-900 hover:bg-slate-800 transition py-2 px-4 shadow-sm active:scale-98 rounded-lg cursor-pointer"
+            className="flex items-center gap-1 text-xs font-mono font-medium text-white bg-indigo-600 hover:bg-indigo-500 transition py-2 px-4 shadow-sm active:scale-98 rounded-lg cursor-pointer"
           >
             Start Project
             <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
