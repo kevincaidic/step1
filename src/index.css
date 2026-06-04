@@ -12,6 +12,11 @@
   --color-accent-secondary: #10b981;
 }
 
+/* Custom Theme Background */
+body {
+  background-color: #008195;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
