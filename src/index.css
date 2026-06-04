@@ -26,6 +26,42 @@
   color: rgb(203 213 225) !important; /* slate-300 */
 }
 
+.text-slate-500 {
+  color: rgb(148 163 184) !important; /* slate-400 */
+}
+
+.text-slate-400 {
+  color: rgb(148 163 184) !important; /* Keep slate-400 */
+}
+
+/* Dark Theme Background Overrides */
+.bg-white {
+  background-color: rgb(30 41 59) !important; /* slate-800 */
+  color: rgb(226 232 240) !important; /* slate-200 */
+}
+
+.bg-slate-50 {
+  background-color: rgb(51 65 85) !important; /* slate-700 */
+}
+
+.bg-slate-100 {
+  background-color: rgb(51 65 85) !important; /* slate-700 */
+}
+
+.bg-slate-200 {
+  background-color: rgb(71 85 105) !important; /* slate-600 */
+}
+
+/* Border adjustments */
+.border-slate-100,
+.border-slate-200 {
+  border-color: rgb(51 65 85) !important; /* slate-700 */
+}
+
+.border-slate-300 {
+  border-color: rgb(71 85 105) !important; /* slate-600 */
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
