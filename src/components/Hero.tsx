@@ -72,7 +72,7 @@ export default function Hero() {
           {/* Profile Column */}
           <div className="lg:col-span-5 w-full">
             {/* Elegant Portrait Frame */}
-            <div id="hero-profile-picture" className="border border-slate-200/60 rounded-3xl overflow-hidden relative group shadow-sm bg-slate-50 flex flex-col justify-end aspect-[4/5] min-h-[380px] w-full">
+            <div id="hero-profile-picture" className="border border-slate-700/60 rounded-3xl overflow-hidden relative group shadow-sm bg-slate-800 flex flex-col justify-end aspect-[4/5] min-h-[380px] w-full">
               <img
                 src="/images/profile/141754af-531c-41a3-bad0-d74c28f0faa1.jpeg"
                 alt="Steph Castro - BSIT & UI/UX Specialist"
@@ -82,9 +82,9 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/10 to-transparent pointer-events-none" />
               
               {/* Pulse status indicator */}
-              <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-xs py-1 px-3 rounded-full border border-slate-200 shadow-3xs">
+              <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 bg-slate-800/95 backdrop-blur-xs py-1 px-3 rounded-full border border-slate-700 shadow-3xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[9px] font-mono font-bold text-slate-800 uppercase tracking-wider">
+                <span className="text-[9px] font-mono font-bold text-slate-200 uppercase tracking-wider">
                   Lab Online
                 </span>
               </div>
