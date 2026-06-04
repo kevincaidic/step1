@@ -44,7 +44,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#008195] border-t border-slate-100">
+    <section id="contact" className="py-24 bg-white border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Context / Contact Information */}

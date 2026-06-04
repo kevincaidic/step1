@@ -24,7 +24,7 @@ export default function CredentialsAndProjects() {
   };
 
   return (
-    <section id="credentials" className="py-24 bg-[#008195] border-t border-slate-100">
+    <section id="credentials" className="py-24 bg-white border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* SECTION HEADER */}

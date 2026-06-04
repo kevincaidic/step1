@@ -8,7 +8,7 @@ export default function AboutAndSkills() {
   };
 
   return (
-    <section id="skills" className="py-24 bg-[#008195] border-t border-slate-200/50">
+    <section id="skills" className="py-24 bg-slate-50 border-t border-slate-200/50">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Grid section: Career Resume Timeline */}
