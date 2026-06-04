@@ -12,6 +12,20 @@
   --color-accent-secondary: #10b981;
 }
 
+/* Dark Theme Text Overrides */
+.text-slate-900,
+.text-slate-950 {
+  color: rgb(241 245 249) !important; /* slate-100 */
+}
+
+.text-slate-800 {
+  color: rgb(226 232 240) !important; /* slate-200 */
+}
+
+.text-slate-600 {
+  color: rgb(203 213 225) !important; /* slate-300 */
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
