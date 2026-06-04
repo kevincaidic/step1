@@ -114,8 +114,8 @@ export default function ContactForm() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Richard Hendricks"
-                        className={`w-full px-3.5 py-2.5 bg-white border text-xs rounded-lg outline-hidden placeholder:text-slate-400 font-sans transition-all ${
-                          errors.name ? 'border-red-500 focus:ring-1 focus:ring-red-400' : 'border-slate-200 focus:border-indigo-600 focus:ring-1 focus:ring-indigo-100'
+                        className={`w-full px-3.5 py-2.5 bg-slate-700 border text-xs rounded-lg outline-hidden placeholder:text-slate-500 text-slate-200 font-sans transition-all ${
+                          errors.name ? 'border-red-500 focus:ring-1 focus:ring-red-400' : 'border-slate-600 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20'
                         }`}
                       />
                       {errors.name && <span className="text-[10px] text-red-500 block font-mono">{errors.name}</span>}
@@ -131,8 +131,8 @@ export default function ContactForm() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="richard@piedpiper.com"
-                        className={`w-full px-3.5 py-2.5 bg-white border text-xs rounded-lg outline-hidden placeholder:text-slate-400 font-sans transition-all ${
-                          errors.email ? 'border-red-500 focus:ring-1 focus:ring-red-400' : 'border-slate-200 focus:border-indigo-600 focus:ring-1 focus:ring-indigo-100'
+                        className={`w-full px-3.5 py-2.5 bg-slate-700 border text-xs rounded-lg outline-hidden placeholder:text-slate-500 text-slate-200 font-sans transition-all ${
+                          errors.email ? 'border-red-500 focus:ring-1 focus:ring-red-400' : 'border-slate-600 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20'
                         }`}
                       />
                       {errors.email && <span className="text-[10px] text-red-500 block font-mono">{errors.email}</span>}
@@ -150,7 +150,7 @@ export default function ContactForm() {
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="e.g. Pied Piper Inc"
-                        className="w-full px-3.5 py-2.5 bg-white border border-slate-200 text-xs rounded-lg outline-hidden focus:border-indigo-600 focus:ring-1 focus:ring-indigo-100 placeholder:text-slate-400 transition"
+                        className="w-full px-3.5 py-2.5 bg-slate-700 border border-slate-600 text-xs rounded-lg outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20 placeholder:text-slate-500 text-slate-200 transition"
                       />
                     </div>
 
@@ -162,7 +162,7 @@ export default function ContactForm() {
                       <select
                         value={formData.need}
                         onChange={(e) => setFormData({ ...formData, need: e.target.value })}
-                        className="w-full px-3.5 py-2.5 bg-white border border-slate-200 text-xs rounded-lg outline-hidden focus:border-indigo-600 focus:ring-1 focus:ring-indigo-100 text-slate-700 transition"
+                        className="w-full px-3.5 py-2.5 bg-slate-700 border border-slate-600 text-xs rounded-lg outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20 text-slate-200 transition"
                       >
                         <option value="design-system">Figma Design Token Scaling</option>
                         <option value="ui-ux-design">Full-Scope Product Designing</option>
@@ -189,8 +189,8 @@ export default function ContactForm() {
                           onClick={() => setFormData({ ...formData, budget: tier.id })}
                           className={`p-3 rounded-xl border text-center transition cursor-pointer flex flex-col justify-center gap-0.5 ${
                             formData.budget === tier.id
-                              ? 'border-indigo-600 bg-indigo-50 text-slate-900 font-semibold shadow-2xs'
-                              : 'border-slate-200 hover:border-slate-300 text-slate-500 bg-white'
+                              ? 'border-indigo-500 bg-indigo-600 text-white font-semibold shadow-2xs'
+                              : 'border-slate-600 hover:border-slate-500 text-slate-300 bg-slate-800'
                           }`}
                         >
                           <span className="text-xs font-semibold">{tier.val}</span>
@@ -210,8 +210,8 @@ export default function ContactForm() {
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Detail your product goals, targeted users, and friction gaps..."
                       rows={4}
-                      className={`w-full px-3.5 py-2.5 bg-white border text-xs rounded-lg outline-hidden placeholder:text-slate-400 font-sans transition-all resize-none ${
-                        errors.message ? 'border-red-500 focus:ring-1 focus:ring-red-400' : 'border-slate-200 focus:border-indigo-600 focus:ring-1 focus:ring-indigo-100'
+                      className={`w-full px-3.5 py-2.5 bg-slate-700 border text-xs rounded-lg outline-hidden placeholder:text-slate-500 text-slate-200 font-sans transition-all resize-none ${
+                        errors.message ? 'border-red-500 focus:ring-1 focus:ring-red-400' : 'border-slate-600 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20'
                       }`}
                     />
                     {errors.message && <span className="text-[10px] text-red-500 block font-mono">{errors.message}</span>}
