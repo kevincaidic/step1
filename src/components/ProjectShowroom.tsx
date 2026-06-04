@@ -453,7 +453,7 @@ export default function ProjectShowroom() {
   };
 
   return (
-    <section id="works-extended" className="py-20 bg-slate-50 border-t border-slate-200/65 overflow-hidden">
+    <section id="works-extended" className="py-20 bg-[#008195] border-t border-slate-200/65 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* SECTION HEADER */}

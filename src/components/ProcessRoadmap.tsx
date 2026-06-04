@@ -20,7 +20,7 @@ export default function ProcessRoadmap() {
   const IconComponent = getStepIcon(activeStep.phase);
 
   return (
-    <section id="process" className="py-24 bg-white border-t border-slate-1/60">
+    <section id="process" className="py-24 bg-[#008195] border-t border-slate-1/60">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
         <div className="max-w-2xl mb-16">
