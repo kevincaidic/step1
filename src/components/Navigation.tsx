@@ -30,7 +30,6 @@ export default function Navigation() {
 
   const menuItems = [
     { id: 'works', label: 'Selected Works', icon: LayoutGrid },
-    { id: 'playground', label: 'Design Lab', icon: Compass },
     { id: 'credentials', label: 'Credentials', icon: Award },
     { id: 'process', label: 'Strategy', icon: GitCommit },
     { id: 'skills', label: 'Bio & Expertise', icon: FileText },
