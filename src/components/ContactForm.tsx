@@ -50,14 +50,14 @@ export default function ContactForm() {
           {/* Left Column: Context / Contact Information */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">
-                Project Intake
+              <span className="text-xs font-mono uppercase tracking-widest text-amber-400 bg-amber-950 px-2.5 py-1 rounded-md">
+                Recognitions
               </span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-slate-900 mt-3">
-                Let&rsquo;s craft cohesive visual platforms.
+              <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-slate-100 mt-3">
+                Academic Achievements
               </h2>
-              <p className="text-slate-500 mt-2 text-sm leading-relaxed">
-                Looking to elevate your layout standards, structure a scalable Figma design system, or optimize conversion hierarchies? Fill out the brief below to coordinate directly.
+              <p className="text-slate-400 mt-2 text-sm leading-relaxed">
+                Recognition for outstanding academic performance and professional contributions in Information Technology, Machine Learning Systems, and Research Development.
               </p>
             </div>
 
@@ -91,191 +91,98 @@ export default function ContactForm() {
             </div>
           </div>
 
-          {/* Right Column: High Fidelity Brief Form Card */}
-          <div className="lg:col-span-7 bg-slate-50 border border-slate-200/60 p-6 md:p-10 rounded-3xl relative overflow-hidden">
-            <AnimatePresence mode="wait">
-              {state === 'idle' || state === 'submitting' ? (
-                <motion.form
-                  key="form"
-                  onSubmit={handleSubmit}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="space-y-6 text-slate-800"
-                >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Name input */}
-                    <div className="space-y-1.5">
-                      <label className="block text-[11px] font-mono font-semibold text-slate-500 uppercase">
-                        Your Name
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="e.g. Richard Hendricks"
-                        className={`w-full px-3.5 py-2.5 bg-slate-700 border text-xs rounded-lg outline-hidden placeholder:text-slate-500 text-slate-200 font-sans transition-all ${
-                          errors.name ? 'border-red-500 focus:ring-1 focus:ring-red-400' : 'border-slate-600 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20'
-                        }`}
-                      />
-                      {errors.name && <span className="text-[10px] text-red-500 block font-mono">{errors.name}</span>}
-                    </div>
+          {/* Right Column: Achievements Timeline */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-6">
+              Recognitions
+            </div>
 
-                    {/* Email input */}
-                    <div className="space-y-1.5">
-                      <label className="block text-[11px] font-mono font-semibold text-slate-500 uppercase">
-                        Work Email
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="richard@piedpiper.com"
-                        className={`w-full px-3.5 py-2.5 bg-slate-700 border text-xs rounded-lg outline-hidden placeholder:text-slate-500 text-slate-200 font-sans transition-all ${
-                          errors.email ? 'border-red-500 focus:ring-1 focus:ring-red-400' : 'border-slate-600 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20'
-                        }`}
-                      />
-                      {errors.email && <span className="text-[10px] text-red-500 block font-mono">{errors.email}</span>}
-                    </div>
-                  </div>
+            {/* Timeline Items */}
+            <div className="space-y-8">
+              {/* AY 2024-2025 */}
+              <div className="flex gap-6">
+                <div className="text-amber-500 font-display font-bold text-xl min-w-[100px]">
+                  AY 2024-<br/>2025
+                </div>
+                <div className="flex-1">
+                  <span className="text-[9px] font-mono uppercase tracking-wider text-slate-500 block mb-1">
+                    Academic Excellence
+                  </span>
+                  <h3 className="text-base font-display font-bold text-slate-100 mb-1">
+                    Dean's Lister
+                  </h3>
+                  <p className="text-xs text-slate-400 mb-2">
+                    Bachelor of Science in Information Technology - DNSC
+                  </p>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    Recognized for outstanding academic performance during the academic year.
+                  </p>
+                </div>
+              </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Organization input */}
-                    <div className="space-y-1.5">
-                      <label className="block text-[11px] font-mono font-semibold text-slate-500 uppercase">
-                        Company Name
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        placeholder="e.g. Pied Piper Inc"
-                        className="w-full px-3.5 py-2.5 bg-slate-700 border border-slate-600 text-xs rounded-lg outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20 placeholder:text-slate-500 text-slate-200 transition"
-                      />
-                    </div>
+              {/* AY 2025-2026 */}
+              <div className="flex gap-6">
+                <div className="text-amber-500 font-display font-bold text-xl min-w-[100px]">
+                  AY 2025-<br/>2026
+                </div>
+                <div className="flex-1">
+                  <span className="text-[9px] font-mono uppercase tracking-wider text-slate-500 block mb-1">
+                    Academic Excellence
+                  </span>
+                  <h3 className="text-base font-display font-bold text-slate-100 mb-1">
+                    Dean's Lister
+                  </h3>
+                  <p className="text-xs text-slate-400 mb-2">
+                    Bachelor of Science in Information Technology - DNSC
+                  </p>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    Recognized for outstanding academic performance during the academic year.
+                  </p>
+                </div>
+              </div>
 
-                    {/* Need Select Input */}
-                    <div className="space-y-1.5">
-                      <label className="block text-[11px] font-mono font-semibold text-slate-500 uppercase">
-                        Core Service Needed
-                      </label>
-                      <select
-                        value={formData.need}
-                        onChange={(e) => setFormData({ ...formData, need: e.target.value })}
-                        className="w-full px-3.5 py-2.5 bg-slate-700 border border-slate-600 text-xs rounded-lg outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20 text-slate-200 transition"
-                      >
-                        <option value="design-system">Figma Design Token Scaling</option>
-                        <option value="ui-ux-design">Full-Scope Product Designing</option>
-                        <option value="mobile-proto">Interactive App Mockups</option>
-                        <option value="consultation">Conversion & UX Audit</option>
-                      </select>
-                    </div>
-                  </div>
+              {/* 2026 Capstone */}
+              <div className="flex gap-6">
+                <div className="text-amber-500 font-display font-bold text-xl min-w-[100px]">
+                  2026
+                </div>
+                <div className="flex-1">
+                  <span className="text-[9px] font-mono uppercase tracking-wider text-slate-500 block mb-1">
+                    Capstone
+                  </span>
+                  <h3 className="text-base font-display font-bold text-slate-100 mb-1">
+                    AniMed: A Machine Learning-Integrated System for Veterinary Records and Prescription Management
+                  </h3>
+                  <p className="text-xs text-slate-400 mb-2">
+                    BSIT Capstone Project
+                  </p>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    Developed a web-based veterinary management system with machine learning, GIS disease mapping, and electronic medical records.
+                  </p>
+                </div>
+              </div>
 
-                  {/* Budget Choice Grid */}
-                  <div className="space-y-1.5">
-                    <label className="block text-[11px] font-mono font-semibold text-slate-500 uppercase">
-                      Budget Context Range ($)
-                    </label>
-                    <div className="grid grid-cols-3 gap-2">
-                      {[
-                        { id: '10k', val: '$10k - $20k', label: 'Pilot Project' },
-                        { id: '50k', val: '$20k - $50k', label: 'Balanced Scope' },
-                        { id: '90k', val: '$50k+ plus', label: 'Full System Upgrade' },
-                      ].map((tier) => (
-                        <button
-                          key={tier.id}
-                          type="button"
-                          onClick={() => setFormData({ ...formData, budget: tier.id })}
-                          className={`p-3 rounded-xl border text-center transition cursor-pointer flex flex-col justify-center gap-0.5 ${
-                            formData.budget === tier.id
-                              ? 'border-indigo-500 bg-indigo-600 text-white font-semibold shadow-2xs'
-                              : 'border-slate-600 hover:border-slate-500 text-slate-300 bg-slate-800'
-                          }`}
-                        >
-                          <span className="text-xs font-semibold">{tier.val}</span>
-                          <span className="text-[9px] font-mono opacity-60 font-medium">{tier.label}</span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Message Input */}
-                  <div className="space-y-1.5">
-                    <label className="block text-[11px] font-mono font-semibold text-slate-500 uppercase">
-                      Product Brief Details
-                    </label>
-                    <textarea
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Detail your product goals, targeted users, and friction gaps..."
-                      rows={4}
-                      className={`w-full px-3.5 py-2.5 bg-slate-700 border text-xs rounded-lg outline-hidden placeholder:text-slate-500 text-slate-200 font-sans transition-all resize-none ${
-                        errors.message ? 'border-red-500 focus:ring-1 focus:ring-red-400' : 'border-slate-600 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/20'
-                      }`}
-                    />
-                    {errors.message && <span className="text-[10px] text-red-500 block font-mono">{errors.message}</span>}
-                  </div>
-
-                  {/* Send Action Trigger of Submit */}
-                  <button
-                    disabled={state === 'submitting'}
-                    className={`w-full py-3 text-xs font-mono font-semibold text-white tracking-widest uppercase flex items-center justify-center gap-2 rounded-lg shadow-md hover:bg-slate-800 transition ${
-                      state === 'submitting' ? 'bg-slate-400 cursor-not-allowed' : 'bg-slate-900 cursor-pointer'
-                    }`}
-                  >
-                    {state === 'submitting' ? (
-                      <>
-                        <div className="w-4 h-4 rounded-full border-2 border-white border-t-transparent animate-spin" />
-                        Allocating Server Thread...
-                      </>
-                    ) : (
-                      <>
-                        Confirm Project Brief Info
-                        <ArrowRight className="w-3.5 h-3.5 opacity-70" />
-                      </>
-                    )}
-                  </button>
-                </motion.form>
-              ) : (
-                /* Success screen */
-                <motion.div
-                  key="success"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ type: 'spring', duration: 0.5 }}
-                  className="flex flex-col items-center justify-center text-center py-10 space-y-4"
-                >
-                  <div className="w-14 h-14 bg-indigo-50 border border-indigo-100 rounded-full flex items-center justify-center text-indigo-600 shadow-inner">
-                    <CheckCircle2 className="w-8 h-8 stroke-[2px]" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-display font-medium text-slate-900">
-                      Briefing Transmitted Successfully
-                    </h3>
-                    <p className="text-slate-500 text-xs max-w-sm mt-1 leading-relaxed">
-                      Steph Castro has received your brief. You will receive a compiled outline and system coordinate layout via your inbox <b className="text-slate-700 font-medium">{formData.email}</b> within one business day.
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => {
-                      setFormData({
-                        name: '',
-                        email: '',
-                        company: '',
-                        need: 'design-system',
-                        budget: '50k',
-                        message: '',
-                      });
-                      setState('idle');
-                    }}
-                    className="px-4 py-2 bg-slate-100 hover:bg-slate-200/80 text-slate-700 font-mono text-xs rounded-lg transition border border-slate-200 cursor-pointer"
-                  >
-                    Add Another Intake
-                  </button>
-                </motion.div>
-              )}
-            </AnimatePresence>
+              {/* 2026 OJT */}
+              <div className="flex gap-6">
+                <div className="text-amber-500 font-display font-bold text-xl min-w-[100px]">
+                  2026
+                </div>
+                <div className="flex-1">
+                  <span className="text-[9px] font-mono uppercase tracking-wider text-slate-500 block mb-1">
+                    Completed 486 Hours
+                  </span>
+                  <h3 className="text-base font-display font-bold text-slate-100 mb-1">
+                    On-the-Job Training — Research Division
+                  </h3>
+                  <p className="text-xs text-slate-400 mb-2">
+                    Davao del Norte State College
+                  </p>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    Supported research monitoring, publication design, document management, and research database updates.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
