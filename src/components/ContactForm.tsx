@@ -146,13 +146,13 @@ export default function ContactForm() {
                     Completed 486 Hours
                   </span>
                   <h3 className="text-base font-display font-bold text-slate-100 mb-1">
-                    On-the-Job Training — Research Division
+                    On-the-Job Training — CSS Laboratory
                   </h3>
                   <p className="text-xs text-slate-400 mb-2 font-mono">
-                    Davao del Norte State College
+                    Holy Child College of Davao - Panabo Campus
                   </p>
                   <p className="text-xs text-slate-500 leading-relaxed">
-                    Supported research monitoring, publication design, document management, and research database updates.
+                    Maintains computer units, performs troubleshooting, and updates Windows systems to ensure smooth operation.
                   </p>
                 </div>
               </div>
