@@ -1,56 +1,15 @@
-import { useState, FormEvent } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Mail, Briefcase, DollarSign, CheckCircle2, ArrowRight, CornerDownRight, Landmark } from 'lucide-react';
+import { CheckCircle2, CornerDownRight, Award, Sparkles } from 'lucide-react';
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    need: 'design-system',
-    budget: '50k',
-    message: '',
-  });
-
-  const [state, setState] = useState<'idle' | 'submitting' | 'success'>('idle');
-  const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const validate = () => {
-    const nextErrors: Record<string, string> = {};
-    if (!formData.name.trim()) nextErrors.name = "Please enter your name.";
-    if (!formData.email.trim()) {
-      nextErrors.email = "Please enter an email address.";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      nextErrors.email = "Please provide a valid email format.";
-    }
-    if (!formData.message.trim()) nextErrors.message = "Write a brief description of your product goals.";
-    return nextErrors;
-  };
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-    setErrors({});
-    setState('submitting');
-    
-    // Simulate high-fidelity briefing compilation delay
-    setTimeout(() => {
-      setState('success');
-    }, 1500);
-  };
 
   return (
     <section id="contact" className="py-24 bg-slate-900 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Column: Context / Contact Information */}
+          {/* Left Column: Context Information */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-amber-400 bg-amber-950 px-2.5 py-1 rounded-md">
+              <span className="text-xs font-mono uppercase tracking-widest text-amber-400 bg-amber-950/50 px-2.5 py-1 rounded-md border border-amber-900">
                 Recognitions
               </span>
               <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight text-slate-100 mt-3">
@@ -61,57 +20,72 @@ export default function ContactForm() {
               </p>
             </div>
 
-            <div className="space-y-4 pt-4 border-t border-slate-100">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600">
-                  <Mail className="w-4 h-4" />
+            <div className="space-y-4 pt-4 border-t border-slate-700">
+              <div className="flex items-start gap-3">
+                <div className="w-9 h-9 bg-slate-800 rounded-lg flex items-center justify-center text-amber-400 shrink-0">
+                  <Award className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-mono uppercase tracking-wide text-slate-400">Inquiries</h4>
-                  <p className="text-xs font-semibold text-slate-800">castro.stephanny@dnsc.edu.ph</p>
+                  <h4 className="text-[10px] font-mono uppercase tracking-wide text-slate-500">Academic Excellence</h4>
+                  <p className="text-xs font-semibold text-slate-300">Dean's Lister (2 consecutive years)</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600">
-                  <Briefcase className="w-4 h-4" />
+              <div className="flex items-start gap-3">
+                <div className="w-9 h-9 bg-slate-800 rounded-lg flex items-center justify-center text-indigo-400 shrink-0">
+                  <Sparkles className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-mono uppercase tracking-wide text-slate-400">Address</h4>
-                  <p className="text-xs font-semibold text-slate-800">Little Panay, Panabo City</p>
+                  <h4 className="text-[10px] font-mono uppercase tracking-wide text-slate-500">Capstone Achievement</h4>
+                  <p className="text-xs font-semibold text-slate-300">ML-Integrated Veterinary System</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-9 h-9 bg-slate-800 rounded-lg flex items-center justify-center text-emerald-400 shrink-0">
+                  <CheckCircle2 className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-[10px] font-mono uppercase tracking-wide text-slate-500">Professional Training</h4>
+                  <p className="text-xs font-semibold text-slate-300">486 Hours OJT Completed</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-indigo-50/50 border border-indigo-100/60 p-4 rounded-xl flex items-start gap-3">
-              <CornerDownRight className="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" />
-              <div className="text-[11px] leading-relaxed text-indigo-950 font-medium">
-                <b>Review Standard:</b> Project briefs are evaluated within one business day. Selected intakes receive a detailed architectural wireframe outline and pricing layout guide before kickoffs.
+            <div className="bg-amber-950/30 border border-amber-900/50 p-4 rounded-xl flex items-start gap-3">
+              <CornerDownRight className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+              <div className="text-[11px] leading-relaxed text-amber-200/80 font-medium">
+                <b className="text-amber-300">Academic Focus:</b> Specialized in UI/UX Design, Machine Learning Systems, Full-Stack Development, and Research Publication Management.
               </div>
             </div>
           </div>
 
           {/* Right Column: Achievements Timeline */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="text-xs font-mono uppercase tracking-widest text-slate-500 mb-6">
-              Recognitions
+          <div className="lg:col-span-7 bg-slate-800/50 border border-slate-700 p-6 md:p-8 rounded-3xl">
+            <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-700">
+              <div className="text-xs font-mono uppercase tracking-widest text-slate-500">
+                Timeline
+              </div>
+              <div className="text-xs font-mono text-amber-400">
+                2024 - 2026
+              </div>
             </div>
 
             {/* Timeline Items */}
             <div className="space-y-8">
               {/* AY 2024-2025 */}
-              <div className="flex gap-6">
-                <div className="text-amber-500 font-display font-bold text-xl min-w-[100px]">
+              <div className="flex gap-6 group">
+                <div className="text-amber-400 font-display font-bold text-lg min-w-[90px] text-right">
                   AY 2024-<br/>2025
                 </div>
-                <div className="flex-1">
-                  <span className="text-[9px] font-mono uppercase tracking-wider text-slate-500 block mb-1">
+                <div className="flex-1 bg-slate-800 border border-slate-700 rounded-xl p-4 hover:border-amber-500/50 transition">
+                  <span className="text-[9px] font-mono uppercase tracking-wider text-amber-400 block mb-2">
                     Academic Excellence
                   </span>
                   <h3 className="text-base font-display font-bold text-slate-100 mb-1">
                     Dean's Lister
                   </h3>
-                  <p className="text-xs text-slate-400 mb-2">
+                  <p className="text-xs text-slate-400 mb-2 font-mono">
                     Bachelor of Science in Information Technology - DNSC
                   </p>
                   <p className="text-xs text-slate-500 leading-relaxed">
@@ -121,18 +95,18 @@ export default function ContactForm() {
               </div>
 
               {/* AY 2025-2026 */}
-              <div className="flex gap-6">
-                <div className="text-amber-500 font-display font-bold text-xl min-w-[100px]">
+              <div className="flex gap-6 group">
+                <div className="text-amber-400 font-display font-bold text-lg min-w-[90px] text-right">
                   AY 2025-<br/>2026
                 </div>
-                <div className="flex-1">
-                  <span className="text-[9px] font-mono uppercase tracking-wider text-slate-500 block mb-1">
+                <div className="flex-1 bg-slate-800 border border-slate-700 rounded-xl p-4 hover:border-amber-500/50 transition">
+                  <span className="text-[9px] font-mono uppercase tracking-wider text-amber-400 block mb-2">
                     Academic Excellence
                   </span>
                   <h3 className="text-base font-display font-bold text-slate-100 mb-1">
                     Dean's Lister
                   </h3>
-                  <p className="text-xs text-slate-400 mb-2">
+                  <p className="text-xs text-slate-400 mb-2 font-mono">
                     Bachelor of Science in Information Technology - DNSC
                   </p>
                   <p className="text-xs text-slate-500 leading-relaxed">
@@ -142,18 +116,18 @@ export default function ContactForm() {
               </div>
 
               {/* 2026 Capstone */}
-              <div className="flex gap-6">
-                <div className="text-amber-500 font-display font-bold text-xl min-w-[100px]">
+              <div className="flex gap-6 group">
+                <div className="text-amber-400 font-display font-bold text-lg min-w-[90px] text-right">
                   2026
                 </div>
-                <div className="flex-1">
-                  <span className="text-[9px] font-mono uppercase tracking-wider text-slate-500 block mb-1">
+                <div className="flex-1 bg-slate-800 border border-slate-700 rounded-xl p-4 hover:border-indigo-500/50 transition">
+                  <span className="text-[9px] font-mono uppercase tracking-wider text-indigo-400 block mb-2">
                     Capstone
                   </span>
-                  <h3 className="text-base font-display font-bold text-slate-100 mb-1">
+                  <h3 className="text-sm font-display font-bold text-slate-100 mb-1 leading-tight">
                     AniMed: A Machine Learning-Integrated System for Veterinary Records and Prescription Management
                   </h3>
-                  <p className="text-xs text-slate-400 mb-2">
+                  <p className="text-xs text-slate-400 mb-2 font-mono">
                     BSIT Capstone Project
                   </p>
                   <p className="text-xs text-slate-500 leading-relaxed">
@@ -163,18 +137,18 @@ export default function ContactForm() {
               </div>
 
               {/* 2026 OJT */}
-              <div className="flex gap-6">
-                <div className="text-amber-500 font-display font-bold text-xl min-w-[100px]">
+              <div className="flex gap-6 group">
+                <div className="text-amber-400 font-display font-bold text-lg min-w-[90px] text-right">
                   2026
                 </div>
-                <div className="flex-1">
-                  <span className="text-[9px] font-mono uppercase tracking-wider text-slate-500 block mb-1">
+                <div className="flex-1 bg-slate-800 border border-slate-700 rounded-xl p-4 hover:border-emerald-500/50 transition">
+                  <span className="text-[9px] font-mono uppercase tracking-wider text-emerald-400 block mb-2">
                     Completed 486 Hours
                   </span>
                   <h3 className="text-base font-display font-bold text-slate-100 mb-1">
                     On-the-Job Training — Research Division
                   </h3>
-                  <p className="text-xs text-slate-400 mb-2">
+                  <p className="text-xs text-slate-400 mb-2 font-mono">
                     Davao del Norte State College
                   </p>
                   <p className="text-xs text-slate-500 leading-relaxed">
